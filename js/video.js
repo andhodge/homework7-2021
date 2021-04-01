@@ -32,6 +32,52 @@ document.querySelector("#faster").addEventListener("click", function() {
 	console.log(video.playbackRate);
 	});
 
+document.querySelector("#skip").addEventListener("click", function() {
+	if (video.currentTime + 15 < video.duration){
+		video.currentTime += 15;
+	} 
+	else {
+		video.currentTime = 0;
+	}
+	video.play();
+	console.log(video.currentTime);
+});
+
+
+
+/* document.querySelector("#mute").addEventListener("click", function() {
+	video.muted = true;
+	
+	}); */
+
+/* if (video.muted){
+	document.querySelector("#mute").innerHTML= "Unmute";
+	document.querySelector("#mute").addEventListener("click", function() {
+		video.muted = false;
+		});
+} else {
+	document.querySelector("#mute").innerHTML= "Mute";
+	document.querySelector("#mute").addEventListener("click", function() {
+		video.muted = true;
+		});
+}
+ */
+
+
+
+
+document.querySelector("#mute").addEventListener("click", function() {
+	video.muted = true;
+	document.querySelector("#mute").innerHTML= "Unmute"
+	console.log("Muted");
+	if (video.muted){
+		document.querySelector("#mute").addEventListener("click", function() {
+			video.muted = false;
+			document.querySelector("#mute").innerHTML= "Mute"
+			console.log("Unmuted");
+			});
+	}
+	});
 
 
 

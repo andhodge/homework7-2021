@@ -24,23 +24,27 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 	video.playbackRate *= 0.95;
-	console.log(video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 	});
 
 document.querySelector("#faster").addEventListener("click", function() {
 	video.playbackRate /= 0.95;
-	console.log(video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 	});
 
 document.querySelector("#skip").addEventListener("click", function() {
 	if (video.currentTime + 15 < video.duration){
+		console.log("Original location " + video.currentTime);
 		video.currentTime += 15;
+		console.log("New location " + video.currentTime);
+
 	} 
 	else {
+		console.log("Going back to beginning");
 		video.currentTime = 0;
+		console.log("New location " + video.currentTime);
 	}
 	video.play();
-	console.log(video.currentTime);
 });
 
 

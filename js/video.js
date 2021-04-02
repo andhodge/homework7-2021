@@ -37,14 +37,14 @@ document.querySelector("#skip").addEventListener("click", function() {
 		console.log("Original location " + video.currentTime);
 		video.currentTime += 15;
 		console.log("New location " + video.currentTime);
-
+		video.play();
 	} 
 	else {
 		console.log("Going back to beginning");
 		video.currentTime = 0;
 		console.log("New location " + video.currentTime);
+		video.play();
 	}
-	video.play();
 });
 
 
